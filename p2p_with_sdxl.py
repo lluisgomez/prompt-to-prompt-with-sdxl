@@ -1132,9 +1132,8 @@ for i,caption in enumerate(captions):
 
     image = pipe(prompts, cross_attention_kwargs=cross_attention_kwargs, generator=gen)
     print(f"Num images: {len(image['images'])}")
-    for i,img in enumerate(image['images']):
-        #img.resize((512,512)).save('p2p_demo_replace_'+str(i)+'.jpg')
-        fname='images/'+'_'.join([str(seed),years[idxs[i]],'replace']) + '.jpg'
+    for j,img in enumerate(image['images']):
+        fname='images/'+'_'.join([str(seed),years[idxs[j]],'replace']) + '.jpg'
         img.save(fname)
 
 
